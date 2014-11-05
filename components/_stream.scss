@@ -1,0 +1,22 @@
+// Stream (or list)
+.Stream {
+  .fa {
+    color: $brown;
+  }
+  .Media {
+    margin-bottom: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.Stream-item {
+  padding: $gutter;
+  margin-bottom: 0;
+  @include dashed-border(1px, 6px, 1px, #e1dcb6, bottom);
+  border-bottom: 1px dashed #e1dcb6;
+  &:nth-child(odd) {
+    background-color: $gray-light;
+  }
+}

@@ -1,0 +1,146 @@
+/* Button Component definition */
+
+// Button Component
+.Button {
+  font-family: $base-font-family;
+  line-height: 1.8em;
+  text-align: center;
+  margin-bottom: $gutter;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  color: $gray-light;
+  font-weight: 700;
+  border-style: solid;
+  border-width: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: $default-border-radius;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25), 0 0 3px rgba(0, 0, 0, 0.25) inset;
+  font-size: $h4-font-size;
+  padding: 0.75em;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+// Button State (modifier)
+.Button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+// Button Sizes (modifier)
+.Button--small {
+  font-size: $h5-font-size;
+  padding: 1em;
+}
+.Button--medium { // This is the default size
+  font-size: $h4-font-size;
+  padding: 0.75em;
+}
+.Button--large {
+  font-size: $h2-font-size;
+  padding: 0.15em;
+}
+
+// Button Display (modifier)
+.Button--inline {
+  display: inline-block;
+  margin-right: $gutter;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  width: auto;
+}
+
+// Button color (modifier)
+.Button--green {
+  border-color: #4b8700;
+  background: linear-gradient(bottom, $green-bright 2%, $green-light);
+  &:active {
+    box-shadow:inset 0 3px 2px rgba(71, 96, 0, 0.45), inset 0 0 5px rgba(55, 90, 0, 0.75);
+  }
+}
+
+.Button--gray {
+  border-color: #a7a88c;
+  background: linear-gradient(bottom, #c6c8ae 2%, #d2d3bd);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1) inset;
+  &:active {
+    background: linear-gradient(bottom, #c6c8ae 2%, #d2d3bd);
+    box-shadow: inset 0 3px 2px rgba(138, 139, 122, 0.45), inset 0 0 5px rgba(161, 162, 147, 0.75);
+  }
+}
+
+.Button--brown {
+  border-color: $brown;
+  background: linear-gradient(bottom, #9d9a78 2%, #c9c6a9);
+  &:active {
+    box-shadow: inset 0 3px 2px rgba(86, 82, 39, 0.45), inset 0 0 5px rgba(81, 79, 57, 0.75);
+    background: linear-gradient(bottom, #79765a 2%, #848265 46%, #959273 51%, #b1af8c);
+  }
+}
+
+.Button--blue {
+  border-color: $blue-facebook-dark;
+  background: linear-gradient(bottom, $blue-facebook-dark, $blue-facebook-light);
+  &:active {
+    border-color: $blue-dark;
+    background: linear-gradient(bottom, #31406e 2%, #6181a9);
+    box-shadow: inset 0 3px 2px rgba(32, 46, 68, 0.45), inset 0 0 5px rgba(17, 53, 101, 0.75);
+  }
+}
+
+.Button--purple {
+  border-color: $purple-dark;
+  background: linear-gradient(bottom, $purple-dark, $purple-light);
+  &:active {
+    border-color: $purple-extra-dark;
+    box-shadow: inset 0 3px 2px rgba(32, 46, 68, 0.45), inset 0 0 5px rgba(17, 53, 101, 0.75);
+  }
+}
+
+// Specific Use Cases (modifier)
+.Button--facebook {
+  @extend .Button--blue;
+  @extend .Button--small;
+  &:before {
+    content: "\f09a";
+    font-family: FontAwesome;
+    margin-right: $gutter;
+    font-size: 2.4rem;
+    line-height: 0;
+    position: relative;
+    bottom: -3px;
+  }
+}
+.Button--wbt {
+  @extend .Button--purple;
+  @extend .Button--small;
+  &:before {
+    content: url("/assets/icon-wbt.png");
+    margin-top: -5px;
+    margin-right: $gutter;
+    line-height: 0;
+    display: inline-block;
+    position: relative;
+    bottom: -6px;
+  }
+}
+.Button--pass {
+  @extend .Button;
+  &:before {
+    content: "\f05e";
+    font-family: FontAwesome;
+    margin-right: $gutter;
+    font-size: 2.4rem;
+    line-height: 0;
+    position: relative;
+    bottom: -2px;
+  }
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  color: $color-text;
+  font-weight: 400;
+}

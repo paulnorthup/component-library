@@ -1,0 +1,56 @@
+%circle {
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+}
+
+.LoadingCircles{
+  position: relative;
+  display: inline-block;
+  animation: circle-center 2s ease-in-out infinite;
+  @extend %circle;
+  &:before{
+    @extend %circle;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -25px;
+    animation: circle-left 2s ease-in-out infinite;
+  }
+  &:after{
+    @extend %circle;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    animation: circle-right 2s ease-in-out infinite;
+  }
+}
+
+$inactive-circle: rgba(255, 255, 255, .3);
+$active-circle: rgba(255, 255, 255, 1);
+
+@keyframes circle-left{
+  0%{background-color: $inactive-circle;}
+  25%{background-color: $active-circle;}
+  50%{background-color: $inactive-circle;}
+  75%{background-color: $inactive-circle;}
+  100%{background-color: $inactive-circle;}
+}
+
+@keyframes circle-center{
+  0%{background-color: $inactive-circle;}
+  25%{background-color: $inactive-circle;}
+  50%{background-color: $active-circle;}
+  75%{background-color: $inactive-circle;}
+  100%{background-color: $inactive-circle;}
+}
+
+@keyframes circle-right{
+  0%{background-color: $inactive-circle;}
+  25%{background-color: $inactive-circle;}
+  50%{background-color: $inactive-circle;}
+  75%{background-color: $active-circle;}
+  100%{background-color: $inactive-circle;}
+}

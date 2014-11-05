@@ -1,0 +1,48 @@
+// Status Bar
+.Status {
+  display: block;
+  text-align: center;
+  p {
+    margin: 0;
+  }
+}
+.Status--information{
+  padding: $gutter;
+  background: $gray-light;
+  color: $gray-dark;
+  &:before {
+    content: "\f05a";
+    font-family: FontAwesome;
+    margin-right: $gutter;
+  }
+}
+.Status--success {
+  padding: $gutter;
+  background: $green-light;
+  color: $green-dark;
+  &:before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    margin-right: $gutter;
+  }
+}
+.Status--warning {
+  padding: $gutter;
+  background: #FFD589;
+  color: $yellow-dark;
+  &:before {
+    content: "\f071";
+    font-family: FontAwesome;
+    margin-right: $gutter;
+  }
+}
+.Status--error {
+  padding: $gutter;
+  background: $red-light;
+  color: $red;
+  &:before {
+    content: "\f057";
+    font-family: FontAwesome;
+    margin-right: $gutter;
+  }
+}

@@ -1,0 +1,61 @@
+// Form Elements
+textarea {
+  @extend p;
+  font-family: $base-font-family;
+  resize: none;
+  border: 1px solid $gray;
+  width: 100%;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.Input {
+}
+
+.Input-text {
+  display: block;
+  box-sizing: border-box;
+  padding: $gutter;
+  border: none;
+  margin-bottom: $gutter;
+}
+
+.Input--wide {
+  width: 100%;
+}
+
+.CheckboxToggle {
+  margin-bottom: 14px;
+  &:first-child {
+    border-top: 1px solid $gray;
+    margin-top: 20px;
+    padding-top: $gutter;
+  } 
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    & + label {
+      display: block;
+      padding: $gutter 0 (2 * $gutter);
+      color: $color-text;
+      font-weight: 300;
+      border-bottom: 1px solid $gray;
+      &:after{
+        content: "\f096";
+        font-family: FontAwesome;
+        float: right;
+        margin: 2px 3px 0 0;
+      }
+      &:hover, &:focus, &:active {
+      }
+    }
+    &:checked + label {
+      &:after{
+        content: "\f046";
+        float: right;
+        font-family: FontAwesome;
+        margin-right: 0px;
+      }
+    } 
+  }
+}
